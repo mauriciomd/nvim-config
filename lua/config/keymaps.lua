@@ -1,6 +1,6 @@
 local options = {noremap = true, silent = true}
 
-vim.g.mapleader = ","
+-- vim.g.mapleader = ","
 vim.keymap.set("n", "<leader>w", "<cmd>write<cr>", {desc = "Save"})
 vim.keymap.set("n", "<leader>q", "<cmd>quit<cr>", {desc = "Exit"})
 vim.keymap.set("n", "<leader>b", "<cmd>e#<cr>")
