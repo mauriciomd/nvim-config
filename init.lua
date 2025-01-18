@@ -39,6 +39,12 @@ require('plugins.lazyvim').setup({
   'hrsh7th/cmp-nvim-lsp', -- LSP source for nvim-cmp,
   'saadparwaiz1/cmp_luasnip', -- Snippets source for nvim-cmp
   'L3MON4D3/LuaSnip', -- Snippets plugin
+  'mfussenegger/nvim-dap',
+  'leoluz/nvim-dap-go',
+  {
+    'rcarriga/nvim-dap-ui', 
+    dependencies = {'mfussenegger/nvim-dap', 'nvim-neotest/nvim-nio'}
+  },
 })
 
 require 'config.keymaps'
@@ -49,3 +55,4 @@ require 'plugins.nvimtree'
 require 'plugins.treesitter'
 require 'plugins.telescope'
 require 'plugins.lspconfig'
+require 'plugins.nvimdapgo'

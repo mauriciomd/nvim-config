@@ -24,14 +24,6 @@ local function open_tab_silent(node)
   vim.cmd.tabprev()
 end
 
-function toggle_nvimtree()
-	if vim.fn.bufname():match 'NvimTree_' then
-		vim.cmd.wincmd 'p'
-	else
-		vim.cmd('NvimTreeFindFile')
-	end
-end
-
 local git_add = function()
   local node = api.tree.get_node_under_cursor()
   local gs = node.git_status.file
@@ -64,4 +56,12 @@ vim.g.loaded_netrwPlugin = 1
 vim.api.nvim_set_keymap("n", "<C-h>", ":NvimTreeToggle<cr>", {silent = true, noremap = true})
 vim.keymap.set('n', '<C-T>', open_tab_silent, {desc ='Open Tab Silent'})
 vim.keymap.set('n', 'ga', git_add, {desc = 'Git Add'})
-vim.keymap.set('n', '<C-H>', '<cmd>:lua toggle_nvimtree()<CR>')
+-- vim.keymap.set('n', '<C-H>', '<cmd>:lua toggle_nvimtree()<CR>')
+
+-- function toggle_nvimtree()
+-- 	if vim.fn.bufname():match 'NvimTree_' then
+-- 		vim.cmd.wincmd 'p'
+-- 	else
+-- 		vim.cmd('NvimTreeFindFile')
+-- 	end
+-- end
